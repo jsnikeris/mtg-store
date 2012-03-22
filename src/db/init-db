@@ -5,7 +5,7 @@ DB=mtg_store
 dropdb $DB 2> /dev/null
 createdb $DB
 
-for file in src/main/sql/*.sql; do
+for file in *.sql; do
     echo "Running `basename $file`"
     psql -f $file $DB
 done
